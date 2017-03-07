@@ -1,0 +1,12 @@
+globalstyle:
+  css:
+    theme:
+      css/style.css: {}
+
+globaljs:
+  js:
+    bower_components/jquery/dist/jquery.js: {}
+    bower_components/bootstrap/dist/js/bootstrap.js: {}
+  dependencies:
+    - core/drupalSettings
+    - core/jquery

@@ -1,0 +1,10 @@
+name: degroote
+type: theme
+description: 'Personenvervoer De Dierenvriend John De Groote'
+base theme: classy
+package: Custom
+core: 8.x
+version: 1.0.0
+libraries:
+  - degroote/globalstyle
+  - degroote/globaljs
