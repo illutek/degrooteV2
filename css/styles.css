@@ -43,11 +43,11 @@ header {
   color: white;
   margin-top: -50px;
   margin-bottom: 35px; }
-  header .site_title {
-    font-family: robotobold, sans-serif;
-    font-size: 3em;
-    position: absolute;
-    top: 25%; }
+  header .header-container {
+    position: relative; }
+
+.sidebar {
+  text-align: right; }
 
 footer {
   background: #0a79be;
@@ -71,6 +71,56 @@ footer {
       color: #3b5998;
       padding-top: 10px;
       padding-bottom: 0; }
+
+.site_title {
+  font-family: robotobold, sans-serif;
+  font-size: 3em;
+  position: absolute;
+  left: 15px;
+  top: 220px; }
+
+.cta {
+  font-family: robotobold, sans-serif;
+  font-size: 1.5em;
+  color: #ffffff;
+  padding: 25px;
+  background: #efd50c;
+  z-index: 999;
+  position: absolute;
+  top: 400px;
+  right: 15px; }
+
+.tiles-container {
+  margin-top: 50px;
+  margin-bottom: 85px; }
+
+.tiles {
+  height: 360px;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  position: relative;
+  background: #0a79be; }
+  .tiles a {
+    color: white; }
+  .tiles:hover img {
+    transform: scale(1.5) translateY(-25px);
+    transition: all 0.3s ease-in-out;
+    filter: brightness(70%); }
+  .tiles:hover .mask {
+    background: none; }
+  .tiles img {
+    width: 100%;
+    height: auto; }
+
+.mask {
+  height: 360px;
+  background: #0a79be;
+  transform: translateY(200px);
+  position: absolute;
+  padding: 0 10px;
+  top: 0;
+  left: 0; }
 
 .form-control, .input-group-addon, .btn {
   border-radius: 0;
