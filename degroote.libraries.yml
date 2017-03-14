@@ -7,6 +7,8 @@ globaljs:
   js:
     bower_components/jquery/dist/jquery.js: {}
     bower_components/bootstrap/dist/js/bootstrap.js: {}
+    js/collapse.js: {}
+    js/jquery.backstretch.min.js: {}
   dependencies:
     - core/drupalSettings
     - core/jquery

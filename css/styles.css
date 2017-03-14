@@ -24,24 +24,44 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: robotolight sans-serif;
+  font-family: robotolight, sans-serif;
   font-size: 16px; }
+
+h1 {
+  font-size: 2.25em;
+  margin-bottom: 15px; }
 
 header {
   height: 500px;
-  background: url("../images/materiaal3.jpg") no-repeat;
-  background-size: cover;
+  z-index: -999;
   color: white;
-  margin-top: -50px; }
+  margin-top: -50px;
+  margin-bottom: 35px; }
   header .site_title {
-    font-family: robotobold sans-serif;
+    font-family: robotobold, sans-serif;
     font-size: 3em;
     position: absolute;
-    top: 23%; }
+    top: 25%; }
+
+footer {
+  background: #0a79be;
+  color: white;
+  min-height: 80px;
+  padding: 25px 0;
+  margin-top: 35px; }
+  footer .contact-details {
+    text-align: center; }
 
 .navbar-default {
-  background: rgba(255, 255, 255, 0.7); }
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 999; }
 
 .navbar {
   margin-bottom: 0;
   border: none; }
+  .navbar li.social-icons {
+    font-size: 2em; }
+    .navbar li.social-icons a {
+      color: #3b5998;
+      padding-top: 10px;
+      padding-bottom: 0; }
