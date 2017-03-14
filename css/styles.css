@@ -31,6 +31,12 @@ h1 {
   font-size: 2.25em;
   margin-bottom: 15px; }
 
+a {
+  color: #0c98ef;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
 header {
   height: 500px;
   z-index: -999;
@@ -65,3 +71,11 @@ footer {
       color: #3b5998;
       padding-top: 10px;
       padding-bottom: 0; }
+
+.form-control, .input-group-addon, .btn {
+  border-radius: 0;
+  border-color: #0a79be; }
+
+.input-group-addon {
+  color: white;
+  background: #0a79be; }
