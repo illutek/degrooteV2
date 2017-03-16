@@ -8,3 +8,10 @@ version: 1.0.0
 libraries:
   - degroote/globalstyle
   - degroote/globaljs
+
+regions:
+  content:  Content
+  pets:     Pets
+  reserve:  Reserve
+  rates:    Rates
+  news:     News
