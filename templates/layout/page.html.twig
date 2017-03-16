@@ -46,37 +46,39 @@
         <div class="col-md-3">
             <div class="tiles pets">
                 <img src="{{ base_path ~ directory }}/images/html_images/huisdieren.jpg" alt="">
-                <div class="mask">
-                    {{ page.pets }}
-                    <a href="#">Lees verder</a>
-                </div>
+                {% if page.pets %}
+                    <div class="mask">
+                        {{ page.pets }}
+                    </div>
+                {% endif %}
             </div>
         </div>
         <div class="col-md-3">
             <div class="tiles reserve">
                 <img src="{{ base_path ~ directory }}/images/html_images/reserveren.jpg" alt="">
-                <div class="mask">
-                    {{ page.reserve }}
-                    <a href="#">Lees verder</a>
-                </div>
-
+                {% if page.reserve %}
+                    <div class="mask">
+                        {{ page.reserve }}
+                    </div>
+                {% endif %}
             </div>
         </div>
         <div class="col-md-3">
             <div class="tiles rates">
-                <div class="mask">
-                    {{ page.rates }}
-                    <a href="#">Lees verder</a>
-                </div>
-
+                {% if page.mask %}
+                    <div class="mask">
+                        {{ page.rates }}
+                    </div>
+                {% endif %}
             </div>
         </div>
         <div class="col-md-3">
             <div class="tiles news">
-                <div class="mask">
-                    {{ page.news }}
-                    <a href="#">Lees verder</a>
-                </div>
+                {% if page.news %}
+                    <div class="mask">
+                        {{ page.news }}
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>
