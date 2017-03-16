@@ -80,15 +80,24 @@ footer {
   top: 220px; }
 
 .cta {
-  font-family: robotobold, sans-serif;
-  font-size: 1.5em;
-  color: #ffffff;
-  padding: 25px;
-  background: #efd50c;
   z-index: 999;
   position: absolute;
   top: 400px;
   right: 15px; }
+  .cta .btn {
+    background: #efd50c;
+    font-family: robotobold, sans-serif;
+    font-size: 1.5em;
+    padding: 25px;
+    border: none; }
+  .cta a {
+    color: white;
+    text-decoration: none; }
+    .cta a:hover {
+      text-decoration: none;
+      color: white;
+      filter: brightness(90%);
+      transition: all 0.3s ease-in-out; }
 
 .tiles-container {
   margin-top: 50px;
