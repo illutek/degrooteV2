@@ -10,6 +10,7 @@ libraries:
   - degroote/globaljs
 
 regions:
+  nav:      Navigation
   content:  Content
   pets:     Pets
   reserve:  Reserve
