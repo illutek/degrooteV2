@@ -37,9 +37,8 @@ a {
   a:hover {
     text-decoration: underline; }
 
-.image-float {
-  margin-right: 15px;
-  float: left; }
+.pull-left {
+  margin-right: 10px; }
 
 table, tbody {
   border: 0;
@@ -48,6 +47,18 @@ table, tbody {
 th, td {
   padding: 5px;
   border-bottom: 1px solid #dddddd; }
+
+.form-control, .input-group-addon, .btn {
+  border-radius: 0;
+  border-color: #0a79be; }
+
+.input-group-addon {
+  color: white;
+  background: #0a79be; }
+
+.news-wrap {
+  border-bottom: 1px solid #0a79be;
+  padding-bottom: 25px; }
 
 header {
   height: 500px;
@@ -119,11 +130,12 @@ footer {
 
 .tiles {
   height: 360px;
+  width: 100%;
+  background: #0a79be;
   overflow: hidden;
   color: white;
   text-align: center;
-  position: relative;
-  background: #0a79be; }
+  position: relative; }
   .tiles a {
     color: white; }
   .tiles:hover img {
@@ -138,17 +150,10 @@ footer {
 
 .mask {
   height: 360px;
+  width: 100%;
   background: #0a79be;
   transform: translateY(200px);
   position: absolute;
   padding: 0 10px;
   top: 0;
   left: 0; }
-
-.form-control, .input-group-addon, .btn {
-  border-radius: 0;
-  border-color: #0a79be; }
-
-.input-group-addon {
-  color: white;
-  background: #0a79be; }

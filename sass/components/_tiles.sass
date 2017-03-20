@@ -1,14 +1,19 @@
 // Tiles
+
+=format-tiles
+  height: 360px
+  width: 100%
+  background: $main-color1-darker
+
 .tiles-container
   margin-top: 50px
   margin-bottom: 85px
 .tiles
-  height: 360px
+  +format-tiles
   overflow: hidden
   color: white
   text-align: center
   position: relative
-  background: $main-color1-darker
   a
     color: white
   &:hover
@@ -22,8 +27,7 @@
     width: 100%
     height: auto
 .mask
-  height: 360px
-  background: $main-color1-darker
+  +format-tiles
   transform: translateY(200px)
   position: absolute
   padding: 0 10px

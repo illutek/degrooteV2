@@ -74,29 +74,31 @@
 #}
 <article{{ attributes.addClass('news-wrap') }}>
 
-  {{ title_prefix }}
-  {% if not page %}
-    <h2{{ title_attributes }}>
-      {{ label }}
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
+    {{ title_prefix }}
+    {% if not page %}
+        <h2{{ title_attributes }}>
+            {{ label }}
+        </h2>
+    {% endif %}
+    {{ title_suffix }}
 
-  {% if display_submitted %}
-    <footer>
-      {{ author_picture }}
-      <div{{ author_attributes }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
+    {% if display_submitted %}
+        <footer>
+            {{ author_picture }}
+            <div{{ author_attributes }}>
+                {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+                {{ metadata }}
+            </div>
+        </footer>
+    {% endif %}
 
-  <div{{ content_attributes }}>
-    <div class="pull-left">
-      {{ content.field_afbeelding }}
+    <div{{ content_attributes }}>
+        <div class="pull-left">
+            {{ content.field_afbeelding }}
+        </div>
+        <div class="">
+            {{ content.body }}
+        </div>
     </div>
-    {{ content.body }}
-  </div>
 
 </article>
