@@ -37,6 +37,10 @@ a {
   a:hover {
     text-decoration: underline; }
 
+.image-float {
+  margin-right: 15px;
+  float: left; }
+
 table, tbody {
   border: 0;
   border-collapse: collapse; }
