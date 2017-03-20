@@ -37,6 +37,14 @@ a {
   a:hover {
     text-decoration: underline; }
 
+table, tbody {
+  border: 0;
+  border-collapse: collapse; }
+
+th, td {
+  padding: 5px;
+  border-bottom: 1px solid #dddddd; }
+
 header {
   height: 500px;
   z-index: -999;
@@ -71,6 +79,8 @@ footer {
       color: #3b5998;
       padding-top: 10px;
       padding-bottom: 0; }
+  .navbar li a.is-active {
+    background: white; }
 
 .site_title {
   font-family: robotobold, sans-serif;
