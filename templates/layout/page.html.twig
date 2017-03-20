@@ -65,7 +65,8 @@
         </div>
         <div class="col-md-3">
             <div class="tiles rates">
-                {% if page.mask %}
+                <img src="{{ base_path ~ directory }}/images/html_images/dollars.jpg" alt="">
+                {% if page.rates %}
                     <div class="mask">
                         {{ page.rates }}
                     </div>
@@ -78,7 +79,7 @@
                 {% if page.news %}
                     <div class="mask">
                         {{ page.news }}
-                        <a href="#">Lees verder</a>
+                        <a href="{{ base_path }}nieuws">{{ "Lees verder" }}</a>
                     </div>
                 {% endif %}
             </div>
