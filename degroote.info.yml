@@ -11,6 +11,7 @@ libraries:
 
 regions:
   nav:      Navigation
+  header:   Header
   content:  Content
   pets:     Pets
   reserve:  Reserve
