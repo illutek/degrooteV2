@@ -82,20 +82,31 @@ footer {
     text-align: center; }
 
 .navbar-default {
-  background: rgba(255, 255, 255, 0.7);
-  z-index: 999; }
-
-.navbar {
+  background: #0a79be;
+  z-index: 999;
   margin-bottom: 0;
   border: none; }
-  .navbar li.social-icons {
+  .navbar-default li.social-icons {
     font-size: 2em; }
-    .navbar li.social-icons a {
-      color: #3b5998;
+    .navbar-default li.social-icons a {
       padding-top: 10px;
       padding-bottom: 0; }
-  .navbar li a.is-active {
-    background: white; }
+  .navbar-default .navbar-toggle {
+    border-radius: 0;
+    border-color: #efd50c;
+    transition: background-color 0.5s ease-in-out; }
+    .navbar-default .navbar-toggle:hover {
+      background-color: #0c98ef; }
+    .navbar-default .navbar-toggle .icon-bar {
+      background-color: #efd50c; }
+  .navbar-default .navbar-nav li a {
+    transition: color 0.3s ease-in-out;
+    color: white; }
+    .navbar-default .navbar-nav li a:hover {
+      color: #efd50c; }
+    .navbar-default .navbar-nav li a.is-active {
+      background: #0c98ef;
+      color: #efd50c; }
 
 .site_title {
   font-family: robotobold, sans-serif;

@@ -1,18 +1,31 @@
 // Navbar
 .navbar-default
-  background: rgba(255, 255, 255, 0.7)
+  background: $main-color1-darker
   z-index: 999
-
-.navbar
   margin-bottom: 0
   border: none
   li
     &.social-icons
       font-size: 2em
       a
-        color: $facebook-bleu
         padding-top: 10px
         padding-bottom: 0
-    a
-      &.is-active
-        background: white
+  .navbar-toggle
+    border-radius: 0
+    border-color: $main-color2
+    transition: background-color 0.5s ease-in-out
+    &:hover
+      background-color: $main-color1
+    .icon-bar
+      background-color: $main-color2
+  .navbar-nav
+    li
+      a
+        transition: color 0.3s ease-in-out
+        color: white
+        &:hover
+          color: $main-color2
+        &.is-active
+          background: $main-color1
+          color: $main-color2
+
