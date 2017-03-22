@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
         base + "images/materiaal2.jpg",
         base + "images/materiaal1.jpg"
     ], {
-        fade: 750,
-        duration: 4000
+        fade: 850,
+        duration: 6000
     });
 });
