@@ -48,13 +48,24 @@ th, td {
   padding: 5px;
   border-bottom: 1px solid #dddddd; }
 
-.form-control, .input-group-addon, .btn {
-  border-radius: 0;
-  border-color: #0a79be; }
+.form-extend, .form-input, .form-select {
+  border: 1px solid #0a79be;
+  border-radius: 0; }
 
-.input-group-addon {
+.form-input {
+  padding: 5px; }
+
+.form-select {
+  padding: 4px; }
+
+.control-label {
   color: white;
+  padding: 6px;
   background: #0a79be; }
+
+@media screen and (max-width: 479px) {
+  .input-custom {
+    width: 200px; } }
 
 .news-wrap {
   border-bottom: 1px solid #0a79be;

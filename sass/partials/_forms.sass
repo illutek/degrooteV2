@@ -1,11 +1,24 @@
 // Forms
-
+// input.html.twig - select.html.twig - form-element-label.html.twig
 
 // Form components
-.form-control, .input-group-addon, .btn
+.form-extend
+  border: 1px solid $main-color1-darker
   border-radius: 0
-  border-color: $main-color1-darker
 
-.input-group-addon
+.form-input
+  padding: 5px
+  @extend .form-extend
+
+.form-select
+  padding: 4px
+  @extend .form-extend
+
+.control-label
   color: white
+  padding: 6px
   background: $main-color1-darker
+
++mQuery(479px)
+  .input-custom
+    width: 200px
