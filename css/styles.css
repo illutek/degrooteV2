@@ -68,6 +68,10 @@ header {
   header .header-container {
     position: relative; }
 
+@media screen and (max-width: 479px) {
+  header {
+    height: 200px; } }
+
 .sidebar {
   text-align: right; }
 
@@ -117,6 +121,11 @@ footer {
     color: white;
     text-decoration: none; }
 
+@media screen and (max-width: 479px) {
+  .site_title {
+    font-size: 1.8em;
+    top: 100px; } }
+
 .cta {
   z-index: 999;
   position: absolute;
@@ -136,6 +145,13 @@ footer {
       color: white;
       filter: brightness(90%);
       transition: all 0.3s ease-in-out; }
+
+@media screen and (max-width: 479px) {
+  .cta {
+    top: 40px; }
+    .cta .btn {
+      font-size: 1em;
+      padding: 10px; } }
 
 .tiles-container {
   margin-top: 50px;
