@@ -48,12 +48,19 @@ th, td {
   padding: 5px;
   border-bottom: 1px solid #dddddd; }
 
-.form-extend, .form-input, .form-select {
+.form-extend, .form-input, .form-number, .form-select {
   border: 1px solid #0a79be;
   border-radius: 0; }
 
 .form-input {
-  padding: 5px; }
+  padding: 5px;
+  width: 500px; }
+
+.form-number {
+  width: 300px; }
+
+.form-item {
+  width: 100%; }
 
 .form-select {
   padding: 4px; }
@@ -62,6 +69,11 @@ th, td {
   color: white;
   padding: 6px;
   background: #0a79be; }
+
+input[type="radio"] {
+  margin: 10px 0 0;
+  width: 45px;
+  float: left; }
 
 @media screen and (max-width: 479px) {
   .input-custom {

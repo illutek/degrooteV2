@@ -8,7 +8,15 @@
 
 .form-input
   padding: 5px
+  width: 500px
   @extend .form-extend
+
+.form-number
+  width: 300px
+  @extend .form-extend
+
+.form-item
+  width: 100%
 
 .form-select
   padding: 4px
@@ -18,6 +26,11 @@
   color: white
   padding: 6px
   background: $main-color1-darker
+
+input[type="radio"]
+  margin: 10px 0 0
+  width: 45px
+  float: left
 
 +mQuery(479px)
   .input-custom
