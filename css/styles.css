@@ -48,7 +48,7 @@ th, td {
   padding: 5px;
   border-bottom: 1px solid #dddddd; }
 
-.form-extend, .form-input, .form-number, .form-select {
+.form_input-extend, .form-input, .form-number {
   border: 1px solid #0a79be;
   border-radius: 0; }
 
@@ -62,21 +62,29 @@ th, td {
 .form-item {
   width: 100%; }
 
-.form-select {
-  padding: 4px; }
+.form_label-extend, .form-submit, .control-label {
+  background: #0a79be;
+  color: white; }
+
+.form-submit {
+  transition: color 0.5s ease; }
+  .form-submit:hover {
+    color: #efd50c; }
 
 .control-label {
-  color: white;
   padding: 6px;
-  background: #0a79be; }
+  font-family: robotolight, sans-serif;
+  font-weight: normal; }
 
-input[type="radio"] {
-  margin: 10px 0 0;
+.input-radio, .input-checkbox {
   width: 45px;
-  float: left; }
+  display: inline-block;
+  float: left;
+  margin: 10px 0 0 !important;
+  cursor: pointer; }
 
 @media screen and (max-width: 479px) {
-  .input-custom {
+  .form-input {
     width: 200px; } }
 
 .news-wrap {

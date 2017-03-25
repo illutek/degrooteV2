@@ -2,36 +2,45 @@
 // input.html.twig - select.html.twig - form-element-label.html.twig
 
 // Form components
-.form-extend
+.form_input-extend
   border: 1px solid $main-color1-darker
   border-radius: 0
 
 .form-input
   padding: 5px
   width: 500px
-  @extend .form-extend
+  @extend .form_input-extend
 
 .form-number
   width: 300px
-  @extend .form-extend
+  @extend .form_input-extend
 
 .form-item
   width: 100%
 
-.form-select
-  padding: 4px
-  @extend .form-extend
+.form_label-extend
+  background: $main-color1-darker
+  color: white
+
+.form-submit
+  @extend .form_label-extend
+  transition: color 0.5s ease
+  &:hover
+    color: $main-color2
 
 .control-label
-  color: white
+  @extend .form_label-extend
   padding: 6px
-  background: $main-color1-darker
+  font-family: robotolight, sans-serif
+  font-weight: normal
 
-input[type="radio"]
-  margin: 10px 0 0
+.input-radio, .input-checkbox
   width: 45px
+  display: inline-block
   float: left
+  margin: 10px 0 0!important
+  cursor: pointer
 
 +mQuery(479px)
-  .input-custom
+  .form-input
     width: 200px
