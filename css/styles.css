@@ -48,7 +48,7 @@ th, td {
   padding: 5px;
   border-bottom: 1px solid #dddddd; }
 
-.form_input-extend, .form-input, .form-number {
+.form_input-extend, .form-input, .form-number, .form-select {
   border: 1px solid #0a79be;
   border-radius: 0; }
 
@@ -58,6 +58,9 @@ th, td {
 
 .form-number {
   width: 300px; }
+
+.form-select {
+  padding: 4px; }
 
 .form-item {
   width: 100%; }
