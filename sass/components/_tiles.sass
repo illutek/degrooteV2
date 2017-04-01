@@ -1,6 +1,8 @@
 // Tiles
+// was =format-tiles (dus een mixin) omgezet naar een extend .format-tiles
+// geeft kortere css code bron: https://roy.io/should-you-use-a-sass-mixin-or-extend/
 
-=format-tiles
+.format-tiles
   height: 360px
   width: 100%
   background: $main-color1-darker
@@ -9,7 +11,7 @@
   margin-top: 50px
   margin-bottom: 85px
 .tiles
-  +format-tiles
+  @extend .format-tiles
   overflow: hidden
   color: white
   text-align: center
@@ -27,7 +29,7 @@
     width: 100%
     height: auto
 .mask
-  +format-tiles
+  @extend .format-tiles
   transform: translateY(200px)
   position: absolute
   padding: 0 10px
