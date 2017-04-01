@@ -17,3 +17,6 @@ regions:
   reserve:  Reserve
   rates:    Rates
   news:     News
+  footer_contact: 'Footer Contact'
+  footer_menu: 'Footer menu'
+  footer_conrtact_form: 'Footer Contact'
