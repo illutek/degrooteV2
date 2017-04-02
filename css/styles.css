@@ -88,6 +88,8 @@ th, td {
   cursor: pointer; }
 
 @media screen and (max-width: 479px) {
+  .control-label {
+    font-size: 0.80em; }
   .form-input {
     width: 200px; } }
 
@@ -148,6 +150,14 @@ footer {
   transition: all 0.5s ease; }
   .btn-footer:hover {
     background: #efd50c; }
+
+@media screen and (max-width: 479px) {
+  footer .footer_contact-wrap, footer .footer_menu-wrap {
+    border-right: none;
+    border-bottom: dashed 1px white; }
+  footer .footer_menu-wrap {
+    border-right: none;
+    border-bottom: dashed 1px white; } }
 
 .navbar-default {
   background: #0a79be;
@@ -250,3 +260,7 @@ footer {
   padding: 0 10px;
   top: 0;
   left: 0; }
+
+@media screen and (max-width: 479px) {
+  .tiles {
+    margin-bottom: 15px; } }
