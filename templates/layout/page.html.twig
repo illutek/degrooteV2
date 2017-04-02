@@ -5,83 +5,89 @@
 {% include directory ~ '/templates/partials/navigation.html.twig' %}
 
 <header>
-    <div class="container header-container">
-        {{ page.header }}
-    </div>
+  <div class="container header-container">
+    {{ page.header }}
+  </div>
 </header>
 <div class="container">
-    <div class="row">
-        <main role="main">
-            <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-            <div class="col-md-8 main-content">
-                {{ page.content }}
-            </div><!-- end main-content-->
-            <div class="col-md-4 sidebar">
-                <!--todo facebook naar include-->
-                <div class="fb-page"
-                     data-href="https://www.facebook.com/luchthaventransportbilzen.airporttransportbilzen"
-                     data-tabs="timeline" data-small-header="false" data-adapt-container-width="true"
-                     data-hide-cover="false" data-show-facepile="true">
-                    <blockquote cite="https://www.facebook.com/luchthaventransportbilzen.airporttransportbilzen"
-                                class="fb-xfbml-parse-ignore">
-                        <a href="https://www.facebook.com/luchthaventransportbilzen.airporttransportbilzen">Luchthaventransport
-                            De Dierenvriend</a>
-                    </blockquote>
-                </div>
-            </div>
-            <!--end sidebar-->
-        </main>
-    </div>
+  <div class="row">
+    <main role="main">
+      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+      <div class="col-md-8 main-content">
+        {{ page.content }}
+      </div><!-- end main-content-->
+      <div class="col-md-4 sidebar">
+        <!--todo facebook naar include-->
+        <div class="fb-page"
+             data-href="https://www.facebook.com/luchthaventransportbilzen.airporttransportbilzen"
+             data-tabs="timeline" data-small-header="false" data-adapt-container-width="true"
+             data-hide-cover="false" data-show-facepile="true">
+          <blockquote cite="https://www.facebook.com/luchthaventransportbilzen.airporttransportbilzen"
+                      class="fb-xfbml-parse-ignore">
+            <a href="https://www.facebook.com/luchthaventransportbilzen.airporttransportbilzen">Luchthaventransport
+              De Dierenvriend</a>
+          </blockquote>
+        </div>
+      </div>
+      <!--end sidebar-->
+    </main>
+  </div>
 </div>
 <!--end container-->
 
 <!--Tiles-->
 <div class="container tiles-container">
-    <div class="row">
-        <div class="col-md-3">
-            {{ page.pets }}
-        </div>
-        <div class="col-md-3">
-            <div class="tiles reserve">
-                <a href="{{ base_path }}aanvraag-vervoer">
-                    <img src="{{ base_path ~ directory }}/images/html_images/reserveren.jpg" alt="Personenvervoer vervoeraanvraag">
-                </a>
-
-                {% if page.reserve %}
-                    <div class="mask">
-                        {{ page.reserve }}
-                    </div>
-                {% endif %}
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="tiles rates">
-                <a href="{{ base_path }}tarieven">
-                    <img src="{{ base_path ~ directory }}/images/html_images/dollars.jpg" alt="Personenvervoer tarieven">
-                </a>
-
-                {% if page.rates %}
-                    <div class="mask">
-                        {{ page.rates }}
-                    </div>
-                {% endif %}
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="tiles news">
-                <a href="{{ base_path }}nieuws">
-                    <img src="{{ base_path ~ directory }}/images/html_images/news.png" alt="Personenvervoer Nieuws">
-                </a>
-
-                {% if page.news %}
-                    <div class="mask">
-                        {{ page.news }}
-                        <a href="{{ base_path }}nieuws">{{ "Lees verder" }}</a>
-                    </div>
-                {% endif %}
-            </div>
-        </div>
+  <div class="row">
+    {# node--huisdieren--teaser.html.twig #}
+    <div class="col-md-3">
+      {{ page.pets }}
     </div>
+
+    {# link naar form vervoer aanvraag, inhoud van deze tegel kan niet aangepast door de editor #}
+    <div class="col-md-3">
+      <a href="{{ base_path }}aanvraag-vervoer">
+        <div class="tiles reserve">
+          <img src="{{ base_path ~ directory }}/images/html_images/reserveren.jpg"
+               alt="Personenvervoer vervoeraanvraag">
+          {% if page.reserve %}
+            <div class="mask">
+              {{ page.reserve }}
+            </div>
+          {% endif %}
+        </div>
+      </a>
+    </div>
+
+    {# ook deze tegel is niet aagepast door de editor #}
+    <div class="col-md-3">
+      <a href="{{ base_path }}tarieven">
+        <div class="tiles rates">
+          <img src="{{ base_path ~ directory }}/images/html_images/dollars.jpg" alt="Personenvervoer tarieven">
+          {% if page.rates %}
+            <div class="mask">
+              {{ page.rates }}
+            </div>
+          {% endif %}
+        </div>
+      </a>
+    </div>
+
+    {# inhoud door views laatste nieuwsbericht, afbeelding vast, niet elk nieuwsbericht heeft een afbeelding #}
+    <div class="col-md-3">
+      <a href="{{ base_path }}nieuws">
+        <div class="tiles news">
+          <img src="{{ base_path ~ directory }}/images/html_images/news.png" alt="Personenvervoer Nieuws">
+          {% if page.news %}
+            <div class="mask">
+              {{ page.news }}
+              <p>{{ "Lees verder" }}</p>
+            </div>
+          {% endif %}
+        </div>
+      </a>
+    </div>
+  </div> {# end .row #}
 </div>
+{# end .container #}
 
 {% include directory ~ '/templates/partials/footer.html.twig' %}

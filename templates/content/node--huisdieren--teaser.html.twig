@@ -72,18 +72,15 @@
  * @ingroup themeable
  */
 #}
-<div class="tiles pets">
-  <a href="{{ url }}" rel="bookmark">
+<a href="{{ url }}" rel="bookmark">
+  <div class="tiles pets">
     {{ content.field_pets_img_tiles }}
-  </a>
-
-
-      <div class="mask">
-        <h2{{ title_attributes }}>
-            {{ label }}
-        </h2>
-          {{ content.body }}
-        <a href="{{ url }}" rel="bookmark">Lees meer</a>
-      </div>
-
-</div>
+    <div class="mask">
+      <h2{{ title_attributes }}>
+        {{ label }}
+      </h2>
+      <p>{{ content.body }}</p>
+      <p>Lees verder</p>
+    </div>
+  </div>
+</a>
