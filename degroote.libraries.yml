@@ -10,6 +10,7 @@ globaljs:
     js/collapse.js: {}
     js/jquery.backstretch.min.js: {}
     js/header-backstretch.js: {}
+    js/custom-modal.js: {}
   dependencies:
     - core/drupalSettings
     - core/jquery
