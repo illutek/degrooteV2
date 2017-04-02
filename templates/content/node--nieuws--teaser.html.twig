@@ -92,8 +92,26 @@
     </footer>
   {% endif %}
 
-  <div{{ content_attributes }}>
-    {{ content }}
+
+  {% set classes = [
+    'news-body',
+    ]
+  %}
+  <div{{ attributes.addClass(classes) }}>
+    {#
+    /**
+    * {{ content.body }}
+    * onderstaande om ... toe te voegen aan trimmend body field
+    * bij content-type de teaser display moet uiteraard meer
+    * ingesteld staan als aantal hieronder
+    *
+    * bron: http://drupal.stackexchange.com/questions/200304/how-to-trim-body-text-field-body
+    */
+    #}
+      {% set text = content.body|render|striptags %}
+      <p>
+          {{ text|length > 50 ? text|slice(0, 50) ~ '...' : text }}
+      </p>
   </div>
 
 </article>
