@@ -25,7 +25,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: robotolight, sans-serif;
-  font-size: 16px; }
+  font-size: 16px;
+  background: #f4f4f6; }
 
 h1 {
   font-size: 2.25em;
@@ -92,7 +93,10 @@ th, td {
 
 .news-wrap {
   border-bottom: 1px solid #0a79be;
-  padding-bottom: 25px; }
+  padding-bottom: 25px;
+  background: white;
+  padding: 0 10px 10px;
+  min-height: 350px; }
 
 header {
   height: 450px;
