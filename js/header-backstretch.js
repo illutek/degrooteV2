@@ -4,9 +4,9 @@
 jQuery(document).ready(function($) {
     var base = drupalSettings.path.baseUrl + 'themes/custom/degroote/';
     $("header").backstretch([
-        base + "images/materiaal3.jpg",
-        base + "images/materiaal2.jpg",
-        base + "images/materiaal1.jpg"
+        base + "images/materiaal-3-min.jpg",
+        base + "images/materiaal-2-min.jpg",
+        base + "images/materiaal-1-min.jpg"
     ], {
         fade: 850,
         duration: 6000
