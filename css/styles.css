@@ -293,11 +293,15 @@ footer {
     .modal-container .custom-modal .content-modal {
       padding: 15px; }
 
-.modal-open .modal-container {
+.modal-container.modal-open {
   opacity: 1;
   pointer-events: all; }
-  .modal-open .modal-container .modal {
+  .modal-container.modal-open .modal {
     margin-top: -180px; }
 
 .conditions {
-  cursor: pointer; }
+  margin-top: 30px;
+  cursor: pointer;
+  transition: all 0.5s ease; }
+  .conditions:hover {
+    color: #0a79be; }

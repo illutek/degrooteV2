@@ -3,14 +3,28 @@ globalstyle:
     theme:
       css/styles.css: {}
 
-globaljs:
+bootstrap:
+  version: 1.x
   js:
     bower_components/bootstrap/dist/js/bootstrap.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+
+globaljs:
+  js:
     js/facebook.js: {}
     js/collapse.js: {}
     js/jquery.backstretch.min.js: {}
     js/header-backstretch.js: {}
     js/custom-modal.js: {}
   dependencies:
-    - core/drupalSettings
     - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+
