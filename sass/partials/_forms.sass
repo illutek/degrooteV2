@@ -6,10 +6,24 @@
   border: 1px solid $main-color1-darker
   border-radius: 0
 
-.form-input
-  padding: 5px
-  width: 500px
-  @extend .form_input-extend
+.main-content
+  .form-input
+    padding: 5px
+    width: 500px
+    display: inline-block
+    @extend .form_input-extend
+
+
+// contact form in de footer
+.footer_contact_form
+  .control-label
+    width: 120px
+  .form-item
+    .form-input
+      width: 200px
+  .form-submit
+    border: solid 1px white
+    padding: 5px 0
 
 .form-number
   width: 300px
@@ -37,6 +51,17 @@
   padding: 6px
   font-family: robotolight, sans-serif
   font-weight: normal
+  display: inline-block
+  float: left
+  width: 170px
+
+
+// Class adres-option ingesteld in de UI van het field option adres = gegevens klant
+// bij het onderdeel 'Element-attributen
+// dit om het een afwijkende breedte mee te geven tov 'soort transport'
+.adres-option
+  .option
+    width: 500px
 
 .input-radio, .input-checkbox
   width: 45px
@@ -47,6 +72,12 @@
 
 +mQuery(479px)
   .control-label
-    font-size: 0.80em
-  .form-input
-    width: 200px
+    padding: 7px
+    font-size: 0.85em
+    width: 120px
+  .main-content
+    .form-input
+      width: 220px
+  .adres-option
+    .option
+      width: 300px

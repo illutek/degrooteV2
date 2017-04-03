@@ -49,13 +49,24 @@ th, td {
   padding: 5px;
   border-bottom: 1px solid #dddddd; }
 
-.form_input-extend, .form-input, .form-number, .form-select {
+.form_input-extend, .main-content .form-input, .form-number, .form-select {
   border: 1px solid #0a79be;
   border-radius: 0; }
 
-.form-input {
+.main-content .form-input {
   padding: 5px;
-  width: 500px; }
+  width: 500px;
+  display: inline-block; }
+
+.footer_contact_form .control-label {
+  width: 120px; }
+
+.footer_contact_form .form-item .form-input {
+  width: 200px; }
+
+.footer_contact_form .form-submit {
+  border: solid 1px white;
+  padding: 5px 0; }
 
 .form-number {
   width: 300px; }
@@ -78,7 +89,13 @@ th, td {
 .control-label {
   padding: 6px;
   font-family: robotolight, sans-serif;
-  font-weight: normal; }
+  font-weight: normal;
+  display: inline-block;
+  float: left;
+  width: 170px; }
+
+.adres-option .option {
+  width: 500px; }
 
 .input-radio, .input-checkbox {
   width: 45px;
@@ -89,9 +106,13 @@ th, td {
 
 @media screen and (max-width: 479px) {
   .control-label {
-    font-size: 0.80em; }
-  .form-input {
-    width: 200px; } }
+    padding: 7px;
+    font-size: 0.85em;
+    width: 120px; }
+  .main-content .form-input {
+    width: 220px; }
+  .adres-option .option {
+    width: 300px; } }
 
 .news-wrap {
   border-bottom: 1px solid #0a79be;
@@ -121,6 +142,10 @@ header {
 
 .sidebar {
   text-align: right; }
+
+@media screen and (max-width: 479px) {
+  .sidebar {
+    text-align: center; } }
 
 footer {
   background: #0a79be;
@@ -300,7 +325,7 @@ footer {
     margin-top: -180px; }
 
 .conditions {
-  margin-top: 30px;
+  margin: 30px 0;
   cursor: pointer;
   transition: all 0.5s ease; }
   .conditions:hover {
