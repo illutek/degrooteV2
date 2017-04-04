@@ -73,11 +73,11 @@
  */
 #}
 {% set classes = [
-  'col-md-6',
+  'col-md-12',
   ]
 %}
 <article{{ attributes.addClass(classes) }}>
-  <div class="news-wrap">
+  <div class="news-full-wrap">
       <div class="news-title">
           {{ title_prefix }}
           {% if not page %}
@@ -99,7 +99,7 @@
     {#{% endif %}#}
 
     <div{{ content_attributes }}>
-      <div class="">
+      <div class="pull-left">
         {{ content.field_afbeelding }}
       </div>
       <div class="news-body">

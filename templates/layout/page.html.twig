@@ -74,17 +74,7 @@
 
     {# inhoud door views laatste nieuwsbericht, afbeelding vast, niet elk nieuwsbericht heeft een afbeelding #}
     <div class="col-md-3">
-      <a href="{{ base_path }}nieuws">
-        <div class="tiles news">
-          <img src="{{ base_path ~ directory }}/images/html_images/news.png" alt="Personenvervoer Nieuws">
-          {% if page.news %}
-            <div class="mask">
-              {{ page.news }}
-              <p>{{ "Lees verder" }}</p>
-            </div>
-          {% endif %}
-        </div>
-      </a>
+        {{ page.news }}
     </div>
   </div> {# end .row #}
 </div>

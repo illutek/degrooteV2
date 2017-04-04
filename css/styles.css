@@ -138,7 +138,7 @@ th, td {
   margin-bottom: 25px; }
   .news-wrap .news-title {
     padding: 5px 10px; }
-  .news-wrap img {
+  .news-wrap .img-super-teaser img {
     width: 100%;
     height: auto;
     max-height: 200px; }
