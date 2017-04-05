@@ -7,57 +7,75 @@
  * file views-view--nieuws.html.twig
  */
 #}
-{% set classes = [
-  'col-md-6',
-  ]
-%}
-<article{{ attributes.addClass(classes) }}>
-  <div class="news-wrap">
-      <div class="news-title">
-          {{ title_prefix }}
-          {% if not page %}
-              <h2{{ title_attributes }}>
-                  {{ label }}
-              </h2>
-          {% endif %}
-          {{ title_suffix }}
-      </div>
 
-    {#{% if display_submitted %}#}
-      {#<footer>#}
+
+{% set classes = [
+'col-md-6',
+] %}
+
+
+<article{{ attributes.addClass(classes) }}>
+    <div class="news-wrap">
+        <div class="news-title">
+            {{ title_prefix }}
+            {% if not page %}
+                <h2{{ title_attributes }}>
+                    {{ label }}
+                </h2>
+            {% endif %}
+            {{ title_suffix }}
+        </div>
+
+        {#{% if display_submitted %}#}
+        {#<footer>#}
         {#{{ author_picture }}#}
         {#<div{{ author_attributes }}>#}
-          {#{% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}#}
-          {#{{ metadata }}#}
+        {#{% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}#}
+        {#{{ metadata }}#}
         {#</div>#}
-      {#</footer>#}
-    {#{% endif %}#}
+        {#</footer>#}
+        {#{% endif %}#}
 
-    <div{{ content_attributes }}>
-      <div class="img-super-teaser">
-        {{ content.field_afbeelding }}
-      </div>
-      <div class="news-body">
-          {#
-          /**
-          * ook extra module maxlength https://www.drupal.org/project/maxlength ingesteld op 200
-          * onderstaande gelijkstellen aan var link
-          * <a href="{{ url }}" rel="bookmark">Lees verder</a>
-          */
-          #}
+        {% set field_image = content.field_afbeelding|render %}
         {% set text = content.body|render|striptags %}
 
-        <p>
-          {#{{ text|length > 150 ? text|slice(0, 150) }}#}
-          {% if text|length > 150 %}
-            {{ text|slice(0, 150) }}
-            {{ ' ...' }}<br>
-            <a href="{{ url }}" rel="bookmark">Lees verder</a>
-          {% else %}
-            {{ text }}
-          {% endif %}
-        </p>
-      </div>
+        <div{{ content_attributes }}>
+            {% if field_image %}
+                <div class="img-super-teaser">
+                    {{ content.field_afbeelding }}
+                </div>
+                <div class="news-body">
+                    <div class="news-readmore">
+                        <a href="{{ url }}" rel="bookmark">Lees verder</a>
+                    </div>
+
+                </div>
+
+            {% else %}
+                <div class="news-body">
+                    {#
+                    /**
+                    * ook extra module maxlength https://www.drupal.org/project/maxlength ingesteld op 200
+                    * onderstaande gelijkstellen aan var link
+                    * <a href="{{ url }}" rel="bookmark">Lees verder</a>
+                    */
+                    #}
+
+
+
+                    {#{{ text|length > 150 ? text|slice(0, 150) }}#}
+                    {% if text|length > 150 %}
+                        <p>{{ text|slice(0, 150) }}
+                            {{ ' ...' }}</p>
+                        <div class="news-readmore">
+                            <a href="{{ url }}" rel="bookmark">Lees verder</a>
+                        </div>
+                    {% else %}
+                        <p>{{ text }}</p>
+                    {% endif %}
+
+                </div>
+            {% endif %}
+        </div>
     </div>
-  </div>
 </article>

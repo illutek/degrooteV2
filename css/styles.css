@@ -140,7 +140,8 @@ th, td {
   padding: 15px 10px; }
 
 .news-wrap {
-  min-height: 400px; }
+  min-height: 310px;
+  position: relative; }
   .news-wrap .news-title {
     padding: 5px 10px; }
   .news-wrap .img-super-teaser img {
@@ -149,6 +150,10 @@ th, td {
     max-height: 200px; }
   .news-wrap .news-body {
     padding: 5px 10px; }
+
+.news-readmore {
+  bottom: 10px;
+  position: absolute; }
 
 header {
   height: 450px;
