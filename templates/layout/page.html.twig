@@ -1,7 +1,6 @@
 <div id="fb-root"></div>
-<!--navgation bar-->
-<!--todo de menu linken in een container-->
 
+{#Navigatie#}
 {% include directory ~ '/templates/partials/navigation.html.twig' %}
 
 <header>
@@ -16,8 +15,13 @@
       <div class="col-md-8 main-content">
         {{ page.content }}
       </div><!-- end main-content-->
+      {#
+      /**
+       * sidebar wordt enkel gebruikt voor de facebook bijdrage te tonen op elke pagina
+      */
+      #}
       <div class="col-md-4 sidebar">
-        <!--todo facebook naar include-->
+
         <div class="fb-page"
              data-href="https://www.facebook.com/luchthaventransportbilzen.airporttransportbilzen"
              data-tabs="timeline" data-small-header="false" data-adapt-container-width="true"
@@ -29,11 +33,11 @@
           </blockquote>
         </div>
       </div>
-      <!--end sidebar-->
+      {# end sidebar #}
     </main>
   </div>
 </div>
-<!--end container-->
+{# end container #}
 
 <!--Tiles-->
 <div class="container tiles-container">
@@ -72,7 +76,11 @@
       </a>
     </div>
 
-    {# inhoud door views laatste nieuwsbericht, afbeelding vast, niet elk nieuwsbericht heeft een afbeelding #}
+    {#
+    /**
+     * inhoud door views laatste nieuwsbericht, enkel deel content.body
+    */
+    #}
     <div class="col-md-3">
         {{ page.news }}
     </div>

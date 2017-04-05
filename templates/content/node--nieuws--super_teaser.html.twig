@@ -1,5 +1,7 @@
 {#
 /**
+ * Display Super Teaser
+ *
  * dit alles wrappen in een class row toegevoegd
  * <div class="view-content row">
  *        {{ rows }}
@@ -8,11 +10,9 @@
  */
 #}
 
-
 {% set classes = [
 'col-md-6',
 ] %}
-
 
 <article{{ attributes.addClass(classes) }}>
     <div class="news-wrap">
@@ -26,19 +26,14 @@
             {{ title_suffix }}
         </div>
 
-        {#{% if display_submitted %}#}
-        {#<footer>#}
-        {#{{ author_picture }}#}
-        {#<div{{ author_attributes }}>#}
-        {#{% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}#}
-        {#{{ metadata }}#}
-        {#</div>#}
-        {#</footer>#}
-        {#{% endif %}#}
-
         {% set field_image = content.field_afbeelding|render %}
         {% set text = content.body|render|striptags %}
 
+        {#
+        /**
+        * als er een image toegevoegd is dan enkel de image printen met altijd de readmore link
+        */
+        #}
         <div{{ content_attributes }}>
             {% if field_image %}
                 <div class="img-super-teaser">
@@ -48,34 +43,30 @@
                     <div class="news-readmore">
                         <a href="{{ url }}" rel="bookmark">Lees verder</a>
                     </div>
-
                 </div>
 
             {% else %}
                 <div class="news-body">
                     {#
                     /**
-                    * ook extra module maxlength https://www.drupal.org/project/maxlength ingesteld op 200
-                    * onderstaande gelijkstellen aan var link
-                    * <a href="{{ url }}" rel="bookmark">Lees verder</a>
+                    * ook extra module maxlength https://www.drupal.org/project/maxlength ingesteld op 250
+                    * dit enkel ter controle voor de editor, wordt er een tekst toegevoegd met iets meer dan 250
+                    * karakters zonder afbeelding is het misschien intersant om deze tekst iets korter te schrijven
+                    *
+                    * dit ter info korte maniet om een if statment te schrijven
+                    * {{ text|length > 150 ? text|slice(0, 150) }}
                     */
                     #}
-
-
-
-                    {#{{ text|length > 150 ? text|slice(0, 150) }}#}
-                    {% if text|length > 150 %}
-                        <p>{{ text|slice(0, 150) }}
-                            {{ ' ...' }}</p>
+                    {% if text|length > 250 %}
+                        <p>{{ text|slice(0, 250) }}{{ ' ...' }}</p>
                         <div class="news-readmore">
                             <a href="{{ url }}" rel="bookmark">Lees verder</a>
                         </div>
                     {% else %}
                         <p>{{ text }}</p>
                     {% endif %}
-
                 </div>
-            {% endif %}
+            {% endif %} {# einde if als er een afbeelding is #}
         </div>
-    </div>
+    </div>{# /.news=wrap #}
 </article>
