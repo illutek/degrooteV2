@@ -1,13 +1,18 @@
 // Nieuws pagina en tile op homepagina
 
-.news-full-wrap
-
-.news-wrap
+.news-wrap-extend
   border-bottom: 1px solid $main-color1-darker
   padding-bottom: 10px
   background: white
-  min-height: 400px
   margin-bottom: 25px
+
+.news-full-wrap
+  @extend .news-wrap-extend
+  .news-body
+    padding: 15px 10px
+.news-wrap
+  @extend .news-wrap-extend
+  min-height: 400px
   .news-title
     padding: 5px 10px
   .img-super-teaser

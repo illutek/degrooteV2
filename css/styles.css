@@ -130,12 +130,17 @@ th, td {
   .option {
     width: 100px; } }
 
-.news-wrap {
+.news-wrap-extend, .news-full-wrap, .news-wrap {
   border-bottom: 1px solid #0a79be;
   padding-bottom: 10px;
   background: white;
-  min-height: 400px;
   margin-bottom: 25px; }
+
+.news-full-wrap .news-body {
+  padding: 15px 10px; }
+
+.news-wrap {
+  min-height: 400px; }
   .news-wrap .news-title {
     padding: 5px 10px; }
   .news-wrap .img-super-teaser img {
