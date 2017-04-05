@@ -11,7 +11,8 @@
   z-index: 999
   .custom-modal
     position: absolute
-    top: 20%
+    display: block
+    top: 7%
     background-color: white
     box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.4)
     transition: margin 0.2s
@@ -25,6 +26,18 @@
       cursor: pointer
     .content-modal
       padding: 15px
+      overflow-y: initial !important
+
+.modal-body
+  height: 350px
+  overflow-y: auto
+
++mQuery(479px)
+  .modal-container
+    .custom-modal
+      .close-button
+        left: 1%
+        bottom: 85%
 
 //Javascript Interactions
 //deze class modal-open wordt toegevoegd aan

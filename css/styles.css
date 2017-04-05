@@ -325,7 +325,8 @@ footer {
   z-index: 999; }
   .modal-container .custom-modal {
     position: absolute;
-    top: 20%;
+    display: block;
+    top: 7%;
     background-color: white;
     box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.4);
     transition: margin 0.2s; }
@@ -338,7 +339,17 @@ footer {
       font-size: 30px;
       cursor: pointer; }
     .modal-container .custom-modal .content-modal {
-      padding: 15px; }
+      padding: 15px;
+      overflow-y: initial !important; }
+
+.modal-body {
+  height: 350px;
+  overflow-y: auto; }
+
+@media screen and (max-width: 479px) {
+  .modal-container .custom-modal .close-button {
+    left: 1%;
+    bottom: 85%; } }
 
 .modal-container.modal-open {
   opacity: 1;
