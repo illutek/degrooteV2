@@ -111,19 +111,19 @@ th, td {
     width: 120px; }
   .main-content .form-input {
     width: 220px; }
-  .adres-option .option {
+  .wide-option .option {
     width: 300px; } }
 
 @media screen and (max-width: 361px) {
   .main-content .form-input {
     width: 200px; }
-  .adres-option .option {
+  .wide-option .option {
     width: 270px; } }
 
 @media screen and (max-width: 321px) {
   .main-content .form-input {
     width: 160px; }
-  .adres-option .option {
+  .wide-option .option {
     width: 230px; }
   .input-radio {
     width: 30px; }
@@ -367,3 +367,26 @@ footer {
 @media screen and (max-width: 479px) {
   .conditions {
     margin-bottom: 30px; } }
+
+.contact-details_wrapper {
+  margin-bottom: 25px; }
+
+.phone {
+  display: block; }
+  .phone:before {
+    font-family: FontAwesome;
+    content: "\f095";
+    display: inline-block;
+    padding-right: 3px; }
+
+.phone-field {
+  display: inline-block; }
+
+.phone_mobile-view {
+  display: none; }
+
+@media screen and (max-width: 479px) {
+  .phone {
+    display: none; }
+  .phone_mobile-view {
+    display: block; } }

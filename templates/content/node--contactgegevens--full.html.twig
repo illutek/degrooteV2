@@ -1,0 +1,36 @@
+{#
+/**
+ *
+ *
+#}
+{%  set classes = [
+  'contact-details_wrapper',
+  ]
+%}
+
+{% set phone_number = content.field_gsm|render|striptags %}
+<article{{ attributes.addClass(classes) }}>
+
+  {{ title_prefix }}
+  {% if not page %}
+    <h3{{ title_attributes }}>
+      {{ label }}
+    </h3>
+  {% endif %}
+  {{ title_suffix }}
+
+  <div{{ content_attributes }}>
+    {{ content.field_adres }}
+    {{ content.field_gemeente }}
+    <div class="phone">
+      {{ content.field_gsm }}
+    </div>
+    <div class="phone_mobile-view">
+      {# |replace('/[^0-9}','') #}
+      <a href="tel:{{ phone_number }}">{{ content.field_gsm }}</a>
+      
+    </div>
+
+  </div>
+
+</article>

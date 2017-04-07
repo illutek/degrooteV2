@@ -1,0 +1,27 @@
+//
+
+.contact-details_wrapper
+  margin-bottom: 25px
+
+.phone
+  display: block
+  &:before
+    font-family: FontAwesome
+    content: "\f095"
+    display: inline-block
+    padding-right: 3px
+
+// phone-field in field--field-gsm.html.twig
+.phone-field
+  display: inline-block
+
+.phone_mobile-view
+  display: none
+
+
+
++mQuery(479px)
+  .phone
+    display: none
+  .phone_mobile-view
+    display: block
