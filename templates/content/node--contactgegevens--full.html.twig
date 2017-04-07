@@ -4,7 +4,7 @@
  *
 #}
 {%  set classes = [
-  'contact-details_wrapper',
+  'contact-details',
   ]
 %}
 
@@ -27,7 +27,7 @@
     </div>
     <div class="phone_mobile-view">
       {# |replace('/[^0-9}','') #}
-      <a href="tel:{{ phone_number }}">{{ content.field_gsm }}</a>
+      <a class="btn btn-footer" href="tel:{{ phone_number }}">{{ content.field_gsm }}</a>
       
     </div>
 

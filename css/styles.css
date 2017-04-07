@@ -58,13 +58,13 @@ th, td {
   width: 500px;
   display: inline-block; }
 
-.footer_contact_form .control-label {
+.footer_contact_form-wrap .control-label {
   width: 120px; }
 
-.footer_contact_form .form-item .form-input {
+.footer_contact_form-wrap .form-item .form-input {
   width: 200px; }
 
-.footer_contact_form .form-submit {
+.footer_contact_form-wrap .form-submit {
   border: solid 1px white;
   padding: 5px 20px; }
 
@@ -184,8 +184,6 @@ footer {
     footer a:hover {
       text-decoration: underline;
       color: white; }
-  footer .contact-details {
-    text-align: left; }
   footer .footer_menu-wrap {
     padding-top: 20px; }
 
@@ -199,10 +197,7 @@ footer {
     background: #efd50c; }
 
 @media screen and (max-width: 479px) {
-  footer .footer_contact-wrap, footer .footer_menu-wrap {
-    border-right: none;
-    border-bottom: dashed 1px white; }
-  footer .footer_menu-wrap {
+  .footer-items-wrap, footer .footer_contact-wrap, footer .footer_menu-wrap {
     border-right: none;
     border-bottom: dashed 1px white; } }
 
@@ -368,24 +363,28 @@ footer {
   .conditions {
     margin-bottom: 30px; } }
 
-.contact-details_wrapper {
+.phone-icon:before, .phone:before, .phone_mobile-view .btn-footer:before {
+  font-family: FontAwesome;
+  content: "\f095";
+  display: inline-block;
+  padding-right: 3px; }
+
+.contact-details {
   margin-bottom: 25px; }
 
 .phone {
   display: block; }
-  .phone:before {
-    font-family: FontAwesome;
-    content: "\f095";
-    display: inline-block;
-    padding-right: 3px; }
 
 .phone-field {
   display: inline-block; }
 
 .phone_mobile-view {
+  margin-top: 15px;
   display: none; }
 
 @media screen and (max-width: 479px) {
+  .contact-details-wrapper {
+    text-align: center; }
   .phone {
     display: none; }
   .phone_mobile-view {

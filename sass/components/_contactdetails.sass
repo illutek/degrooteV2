@@ -1,26 +1,34 @@
-//
+// Contactgegevens block
 
-.contact-details_wrapper
-  margin-bottom: 25px
-
-.phone
-  display: block
+.phone-icon  //extend-class
   &:before
     font-family: FontAwesome
     content: "\f095"
     display: inline-block
     padding-right: 3px
 
+.contact-details
+  margin-bottom: 25px
+
+.phone
+  display: block
+  @extend .phone-icon
+
 // phone-field in field--field-gsm.html.twig
 .phone-field
   display: inline-block
 
 .phone_mobile-view
+  .btn-footer
+    @extend .phone-icon
+  margin-top: 15px
   display: none
 
 
 
 +mQuery(479px)
+  .contact-details-wrapper
+    text-align: center
   .phone
     display: none
   .phone_mobile-view

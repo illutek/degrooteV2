@@ -15,8 +15,6 @@ footer
     &:hover
       text-decoration: underline
       color: white
-  .contact-details
-    text-align: left
   .footer_menu-wrap
     @extend .footer_contact-wrap
     padding-top: 20px
@@ -31,10 +29,12 @@ footer
     background: $main-color2
 
 +mQuery(479px)
+  .footer-items-wrap
+    border-right: none
+    border-bottom: dashed 1px white
+
   footer
     .footer_contact-wrap
-      border-right: none
-      border-bottom: dashed 1px white
+      @extend .footer-items-wrap
     .footer_menu-wrap
-      border-right: none
-      border-bottom: dashed 1px white
+      @extend .footer-items-wrap
