@@ -155,16 +155,24 @@ th, td {
   bottom: 10px;
   position: absolute; }
 
-header {
+.header-container {
+  position: relative; }
+
+.header-front {
   height: 450px;
   color: white;
   margin-bottom: 35px; }
-  header .header-container {
-    position: relative; }
+
+.header-page {
+  height: 100px;
+  background: #0a79be;
+  margin-bottom: 35px; }
 
 @media screen and (max-width: 479px) {
-  header {
-    height: 200px; } }
+  .header-front {
+    height: 200px; }
+  .header-page {
+    margin-bottom: 5px; } }
 
 .sidebar {
   text-align: right; }
@@ -233,35 +241,43 @@ footer {
   font-size: 3em;
   position: absolute;
   left: 15px;
-  top: 300px; }
+  top: 15px; }
   .site_title a {
     color: white;
     text-decoration: none; }
 
-@media screen and (max-width: 479px) {
-  .site_title {
-    font-size: 1.8em;
-    top: 100px; } }
+.header-front .site_title {
+  top: 300px; }
 
-.cta {
+@media screen and (max-width: 479px) {
+  .header-front .site_title {
+    font-size: 1.8em;
+    top: 50px; }
+  .header-page .site_title {
+    font-size: 1.6em; } }
+
+.header-front .cta {
   z-index: 999;
   position: absolute;
   top: 150px;
   right: 15px; }
-  .cta .btn {
+  .header-front .cta .btn {
     background: #efd50c;
     font-family: robotobold, sans-serif;
     font-size: 1.5em;
     padding: 25px;
     border: none; }
-  .cta a {
+  .header-front .cta a {
     color: white;
     text-decoration: none; }
-    .cta a:hover {
+    .header-front .cta a:hover {
       text-decoration: none;
       color: white;
       filter: brightness(90%);
       transition: all 0.3s ease-in-out; }
+
+.header-page .cta {
+  display: none; }
 
 @media screen and (max-width: 479px) {
   .cta {

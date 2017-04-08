@@ -1,24 +1,29 @@
 // CTA button on header region
-.cta
-  z-index: 999
-  position: absolute
-  top: 150px
-  right: 15px
-  .btn
-    background: $main-color2
-    font-family: robotobold, sans-serif
-    font-size: 1.5em
-    padding: 25px
-    border: none
-  a
-    color: white
-    text-decoration: none
-    &:hover
-      text-decoration: none
-      color: white
-      filter: brightness(90%)
-      transition: all 0.3s ease-in-out
 
+.header-front
+  .cta
+    z-index: 999
+    position: absolute
+    top: 150px
+    right: 15px
+    .btn
+      background: $main-color2
+      font-family: robotobold, sans-serif
+      font-size: 1.5em
+      padding: 25px
+      border: none
+    a
+      color: white
+      text-decoration: none
+      &:hover
+        text-decoration: none
+        color: white
+        filter: brightness(90%)
+        transition: all 0.3s ease-in-out
+
+.header-page
+  .cta
+    display: none
 
 +mQuery(479px)
   .cta
