@@ -66,7 +66,14 @@ th, td {
 
 .footer_contact_form-wrap .form-submit {
   border: solid 1px white;
-  padding: 5px 20px; }
+  padding: 5px 20px;
+  color: white; }
+
+.footer_contact_form-wrap input, .footer_contact_form-wrap textarea {
+  color: #0a79be; }
+
+.footer_contact_form-wrap textarea {
+  height: 50px; }
 
 .form-number {
   width: 300px; }
