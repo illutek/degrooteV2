@@ -3,3 +3,29 @@
  * Created by Stefan on 9/04/2017.
  */
 #}
+<div class="sub-footer-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="sub-footer">
+        <div class="col-md-6">
+          {{ page.sub_footer }}
+          {#
+          /**
+           * Onderstaande voorlopig hard geplaatst, region is voorzien als er nog beslist wordt om
+           * dit editeerbaar te maken.
+          */
+          #}
+          <p>
+            Houder van
+            <img src="{{ base_path ~ directory }}/images/html_images/IRU.jpg" alt="Graduate IRU Academy">
+          </p>
+
+        </div>
+        <div class="col-md-6 copy-right">
+          &copy; Personenvervoer De Dierenvriend | {{ "now"|date("Y") }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
