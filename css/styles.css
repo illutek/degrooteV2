@@ -216,6 +216,18 @@ footer {
     border-right: none;
     border-bottom: dashed 1px white; } }
 
+.sub-footer-wrapper {
+  background: white; }
+
+.sub-footer {
+  min-height: 50px;
+  color: #0a79be;
+  padding: 15px 0;
+  overflow: hidden; }
+
+.copy-right {
+  text-align: right; }
+
 .navbar-default {
   background: #0a79be;
   z-index: 999;
