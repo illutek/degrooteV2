@@ -1,7 +1,7 @@
 globalstyle:
   css:
     theme:
-      css/styles.css: {}
+      css/styles.min.css: {}
 
 bootstrap:
   version: 1.x
