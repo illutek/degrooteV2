@@ -16,7 +16,6 @@ bootstrap:
 
 globaljs:
   js:
-    js/facebook.js: {}
     js/collapse.js: {}
     js/jquery.backstretch.min.js: {}
     js/header-backstretch.js: {}

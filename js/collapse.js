@@ -11,20 +11,21 @@
  * pagina geen enkele andere tool gebruik maakt van het click event
  * $(this).find(".navbar-toggle").trigger( "click" );
  */
+(function ($) {
+    jQuery(document).ready(function ($) {
+        //navigation collapse after click on menu item
+        $('.nav a').on('click', function () {
+            if ($('.navbar-toggle').css('display') != 'none') {
+                $(".navbar-toggle").trigger("click");
+            }
+        });
 
-jQuery(document).ready(function($) {
-    //navigation collapse after click on menu item
-    $('.nav a').on('click', function(){
-        if($('.navbar-toggle').css('display') !='none'){
-            $(".navbar-toggle").trigger( "click" );
-        }
+        $("body").click(function (event) {
+            // only do this if navigation is visible, otherwise you see jump in
+            // navigation while collapse() is called
+            if ($(".navbar-collapse").is(":visible") && $(".navbar-toggle").is(":visible")) {
+                $('.navbar-collapse').collapse('toggle');
+            }
+        });
     });
-
-    $("body").click(function(event) {
-        // only do this if navigation is visible, otherwise you see jump in
-        // navigation while collapse() is called
-        if ($(".navbar-collapse").is(":visible") && $(".navbar-toggle").is(":visible") ) {
-            $('.navbar-collapse').collapse('toggle');
-        }
-    });
-});
+})(jQuery);

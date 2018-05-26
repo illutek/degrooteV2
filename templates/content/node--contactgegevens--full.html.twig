@@ -1,6 +1,8 @@
 {#
 /**
- *
+ * a href tel: kan enkel door een var gelijk te stellen aan de render functie
+ * de spaties in de nummer is geen probleem
+ * het phone icoontje toegevoegd via css _contactdetails.sass
  *
 #}
 {%  set classes = [
@@ -9,8 +11,8 @@
 %}
 
 {% set phone_number = content.field_gsm|render|striptags %}
-<article{{ attributes.addClass(classes) }}>
 
+<article{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if not page %}
     <h3{{ title_attributes }}>
@@ -27,11 +29,13 @@
       {{ content.field_gsm }}
     </div>
     <div class="phone_mobile-view">
-      {# |replace('/[^0-9}','') #}
+      {#
+      /**
+       * |replace('/[^0-9}','') dit om de spaties uit de nummer te filteren werkt niet
+       * blijkt ook niet nodig te zijn nummer wordt evengoed gebeld
+       */
+      #}
       <a class="btn btn-footer" href="tel:{{ phone_number }}">{{ content.field_gsm }}</a>
-      
     </div>
-
   </div>
-
 </article>
