@@ -5,31 +5,25 @@
 .form_input-extend
   border: 1px solid $main-color1-darker
   border-radius: 0
+  background: white
 
 .main-content
   .form-input
     padding: 5px
     width: 500px
     display: inline-block
+    
     @extend .form_input-extend
-
-
-// contact form in de footer
-.footer_contact_form-wrap
-  .control-label
-    width: 120px
-  .form-item
-    .form-input
-      width: 200px
   .form-submit
-    border: solid 1px white
-    padding: 5px 20px
-    color: white
-  input
-    color: $main-color1-darker
+    background: $main-color1-darker
+
   textarea
-    @extend input
-    height: 50px
+    @extend .form_input-extend
+    background: white
+
+
+input[type="radio"], input[type="checkbox"]
+  background: white
 
 .form-number
   width: 300px
@@ -52,6 +46,7 @@
   &:hover
     color: $main-color2
 
+
 .control-label
   @extend .form_label-extend
   padding: 6px
@@ -61,6 +56,28 @@
   float: left
   width: 170px
 
+// contact form in de footer
+.footer_contact_form-wrap
+  .control-label
+    width: 120px
+  .form-item
+    .form-input
+      width: 200px
+      background: white
+  .form-submit
+    border: solid 1px white
+    padding: 5px 20px
+    color: white
+    background: $main-color1-darker
+  input, textarea
+    border: solid 1px $main-color1-darker
+    color: $main-color1-darker
+    background: white
+  textarea
+    height: 50px
+
+// .webform-button--submit
+//   background: $main-color1-darker
 
 // Class wide-option ingesteld in de UI van het field option adres = gegevens klant
 // bij het onderdeel 'Wrapper-attributen
