@@ -1,7 +1,7 @@
 globalstyle:
   css:
     theme:
-      css/styles.css: {}
+      dist/css/styles.css: {}
 
 bootstrap:
   version: 1.x
@@ -16,10 +16,7 @@ bootstrap:
 
 globaljs:
   js:
-    js/collapse.js: {}
-    js/jquery.backstretch.min.js: {}
-    js/header-backstretch.js: {}
-    js/custom-modal.js: {}
+    dist/js/all.js: {}
   dependencies:
     - core/jquery
     - core/drupal.ajax

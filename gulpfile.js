@@ -1,187 +1,83 @@
-/**
- * Created by stefan on 19-02-2019.
- * gulp-clean is replaced by gulp-rimraf
- * http://learningwithjb.com/posts/cleaning-our-build-folder-with-gulp
- *     
- */
-
-/* jshint node: true */
-"use strict";
-
-const gulp = require('gulp'),
-      prettyError = require('gulp-prettyerror'),
-      watch = require('gulp-watch'),
-      prefixer = require('gulp-autoprefixer'),
-      uglify = require('gulp-uglify'),
+// Created by stefan on 30-01-2020
+// Initialize modules
+// Importing specific gulp API functions lets us write them below as series() instead of gulp.series()
+const { src, dest, watch, series, parallel } = require('gulp');
+// Importing all the Gulp-related packages we want to use
+const sourcemaps = require('gulp-sourcemaps'),
       sass = require('gulp-sass'),
-      sourcemaps = require('gulp-sourcemaps'),
-      cleancss = require('gulp-clean-css'),
-      rimraf = require('rimraf')
+      concat = require('gulp-concat'),
+      uglify = require('gulp-uglify'),
+      postcss = require('gulp-postcss'),
+      autoprefixer = require('autoprefixer'),
+      cssnano = require('cssnano'),
+      lineec  = require('gulp-line-ending-corrector'),
+      imagemin = require('gulp-imagemin'),
+      changed = require('gulp-changed'),
+      prettyError = require('gulp-prettyerror')
 
-/**
- *
- * @type {{dist: {bower: string, html: string, php: string, js: string, css: string, img: string, fonts: string},
- * src: {bower: string, twig: string, yml: string, theme: string, js: string, style: string, img: string,
- * fonts: string}, watch: {twig: string, yml: string, theme: string, js: string, style: string, img: string,
- * fonts: string}, clean: string}}
- * 
-*/
+// File paths
+const files = {
+    scssPath: 'sass/**/*.sass',
+    jsPath: 'js/**/*.js',
+    imgPath: 'images/**/*.*'
+}
 
-/**
- * Variables
- *   
-*/
-const path = {
-    dist: {
-        bower:'dist/bower_components/',
-        twig: 'dist/templates/',
-        yml: 'dist/',
-        theme: 'dist',
-        js: 'dist/js/',
-        css: 'dist/css/',
-        img: 'dist/images/',
-        fonts: 'dist/fonts/',
-        png: 'dist'
-    },
-    src: {
-        bower: 'bower_components/**/*.*',
-        twig: 'templates/**/*.twig',
-        yml: '*.yml',
-        theme: '*.theme',
-        js: 'js/**/*.js',
-        style: 'sass/styles.sass',
-        img: 'images/**/*.*',
-        fonts: 'fonts/**/*.*',
-        png: '*.png'
-    },
-    watch: {
-        twig: 'templates/**/*.twig',
-        yml: '*.yml',
-        theme: '*.theme',
-        js: 'js/**/*.js',
-        style: 'sass/**/*.sass',
-        img: 'images/**/*.*',
-        fonts: 'fonts/**/*.*'
-    },
-    clean: './dist'
-};
+// Dist paths
+const distPath = {
+    cssDist: 'dist/css',
+    jsDist: 'dist/js'
+}
 
-/**
- * clean task
- *   
-*/
-gulp.task('clean', function (cb) {
-    rimraf(path.clean, cb);
-});
-
-
-/**
- * task
- *   
-*/
-gulp.task('bower:dist', function () {
-    gulp.src(path.src.bower)
-        .pipe(gulp.dest(path.dist.bower));
-});
-
-
-gulp.task('twig:dist', function () {
-    gulp.src(path.src.twig)
-        .pipe(gulp.dest(path.dist.twig));
-});
-
-
-gulp.task('yml:dist', function () {
-    gulp.src(path.src.yml)
-        .pipe(gulp.dest(path.dist.yml));
-});
-
-gulp.task('theme:dist', function () {
-    gulp.src(path.src.theme)
-        .pipe(gulp.dest(path.dist.theme));
-});
-
-gulp.task('js:dist', function () {
-    gulp.src(path.src.js)
+// Sass task: compiles the style.scss file into style.css
+function scssTask(){    
+    return src(files.scssPath)
         .pipe(prettyError())
-        .pipe(sourcemaps.init())
+        .pipe(sourcemaps.init()) // initialize sourcemaps first
+        .pipe(sass()) // compile SCSS to CSS
+        .pipe(dest('css')) // css no prefix or minify
+        .pipe(postcss([ autoprefixer(), cssnano() ])) // PostCSS plugins
+        .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
+        .pipe(lineec()) // line ending corrector
+        .pipe(dest(distPath.cssDist) // put final CSS in dist folder
+    ); 
+}
+
+// JS Task
+function jsTask() {
+    return src(files.jsPath)
+        .pipe(concat('all.js'))
         .pipe(uglify())
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest(path.dist.js));
-});
+        .pipe(lineec()) // line ending corrector
+        .pipe(dest('dist/js')
+    );
+}
 
-gulp.task('style:dist', function () {
-    gulp.src(path.src.style)
-        .pipe(prettyError())
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            sourceMap: true,
-            errLogToConsole: true
-        }))
-        .pipe(prefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
-        .pipe(cleancss({compatibility: 'ie9'}))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest(path.dist.css));
-});
+// Images minify task
+function imgTask() {
+    return src(files.imgPath)
+        .pipe(changed('dist/images'))
+        .pipe(imagemin([
+            imagemin.gifsicle({interlaced: true}),
+            imagemin.mozjpeg({quality: 75, progressive: true}),
+            imagemin.optipng({optimizationLevel: 5}),
+            imagemin.svgo({
+                plugins: [
+                    {removeViewBox: true},
+                    {cleanupIDs: false}
+                ]
+            })
+        ]))
+        .pipe(dest('dist/images'));
+}
 
-gulp.task('img:dist', function () {
-    gulp.src(path.src.img)
-        .pipe(gulp.dest(path.dist.img));
-});
+// Watch task
+function watchTask() {
+    watch([files.scssPath, files.jsPath, files.imgPath],
+      parallel(scssTask, jsTask, imgTask));
+}
 
-gulp.task('fonts:dist', function() {
-    gulp.src(path.src.fonts)
-        .pipe(gulp.dest(path.dist.fonts));
-});
-
-gulp.task('png:dist', function () {
-    gulp.src(path.src.png)
-        .pipe(gulp.dest(path.dist.png));
-});
-
-gulp.task('dist', [
-    'bower:dist',
-    'twig:dist',
-    'yml:dist',
-    'theme:dist',
-    'js:dist',
-    'style:dist',
-    'fonts:dist',
-    'img:dist',
-    'png:dist'
-]);
-
-/**
- * Watch
- *   
-*/
-
-gulp.task('watch', function(){
-    watch([path.watch.twig], function(event, cb) {
-        gulp.start('twig:dist');
-    });
-    watch([path.watch.yml], function(event, cb) {
-        gulp.start('yml:dist');
-    });
-    watch([path.watch.theme], function(event, cb) {
-        gulp.start('theme:dist');
-    });
-    watch([path.watch.style], function(event, cb) {
-        gulp.start('style:dist');
-    });
-    watch([path.watch.js], function(event, cb) {
-        gulp.start('js:dist');
-    });
-    watch([path.watch.img], function(event, cb) {
-        gulp.start('img:dist');
-    });
-    watch([path.watch.fonts], function(event, cb) {
-        gulp.start('fonts:dist');
-    });
-});
-
-
-gulp.task('default', ['dist', 'watch']);
+// Default task
+exports.default = series(
+    parallel(scssTask, jsTask, imgTask),
+    watchTask
+);
