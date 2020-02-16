@@ -70,6 +70,23 @@ gulp.task('sass', function () {
 Met de functie gulp move wordt er een build directory aangemaakt met alle nodige files
 voor het theme.
 
+Update Gulp naar versie 4
+
+```
+function scssTask(){    
+    return src(files.scssPath)
+        .pipe(prettyError())
+        .pipe(sourcemaps.init()) // initialize sourcemaps first
+        .pipe(sass()) // compile SCSS to CSS
+        .pipe(dest('css')) // css no prefix or minify
+        .pipe(postcss([ autoprefixer(), cssnano() ])) // PostCSS plugins
+        .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
+        .pipe(lineec()) // line ending corrector
+        .pipe(dest(distPath.cssDist) // put final CSS in dist folder
+    ); 
+}
+```
+
 ### Drupal8 als CMS
 Local ontwikkeld in Docker met Docker4Drupal  
 https://github.com/wodby/docker4drupal
