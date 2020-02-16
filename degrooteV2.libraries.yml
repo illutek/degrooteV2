@@ -3,6 +3,14 @@ globalstyle:
     theme:
       dist/css/styles.css: {}
 
+fonts:
+  license:
+    name: SIL Open Font License 1.1
+    url: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi$id=OFL
+  css:
+    theme:
+      '//fonts.googleapis.com/css?family=Roboto:300,400,700': { type: external, minified: true }
+
 bootstrap:
   version: 1.x
   js:

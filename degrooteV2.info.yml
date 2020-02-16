@@ -7,6 +7,7 @@ core: 8.x
 version: 2.0.0
 libraries:
   - degrooteV2/globalstyle
+  - degrooteV2/fonts
   - degrooteV2/bootstrap
   - degrooteV2/globaljs
 
