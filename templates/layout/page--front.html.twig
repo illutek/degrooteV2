@@ -42,12 +42,13 @@
 <div class="container tiles-container">
   <div class="row">
     {# node--huisdieren--teaser.html.twig #}
-    <div class="col-md-3">
+    {# Deze region verwijderd na verwijderen tekst over huisdieren #}
+    {# <div class="col-md-3">
       {{ page.pets }}
-    </div>
+    </div> #}
 
     {# link naar form vervoer aanvraag, inhoud van deze tegel kan niet aangepast door de editor #}
-    <div class="col-md-3">
+    <div class="col-md-4">
       <a href="{{ base_path }}aanvraag-vervoer">
         <div class="tiles reserve">
           <img src="{{ base_path ~ directory }}/images/html_images/reserveren.jpg"
@@ -62,7 +63,7 @@
     </div>
 
     {# ook deze tegel is niet aagepast door de editor #}
-    <div class="col-md-3">
+    <div class="col-md-4">
       <a href="{{ base_path }}tarieven">
         <div class="tiles rates">
           <img src="{{ base_path ~ directory }}/images/html_images/dollars.jpg" alt="Personenvervoer tarieven">
@@ -80,7 +81,7 @@
      * inhoud door views laatste nieuwsbericht, enkel deel content.body
     */
     #}
-    <div class="col-md-3">
+    <div class="col-md-4">
         {{ page.news }}
     </div>
   </div> {# end .row #}
